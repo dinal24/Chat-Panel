@@ -1,10 +1,10 @@
 (function() {
 	'use strict';
 
-	angular.module('botfac.chatPanel', []);
-	angular.module('botfac.chatPanel').directive('botfacChatPanel', ['$timeout', ChatPanel]);
+	angular.module('botfac.simpleChat', []);
+	angular.module('botfac.simpleChat').directive('botfacSimpleChat', ['$timeout', SimpleChat]);
 
-	function ChatPanel($timeout) {
+	function SimpleChat($timeout) {
 		var directive = {
 			restrict: 'EA',
 			templateUrl: 'chatTemplate.html',
