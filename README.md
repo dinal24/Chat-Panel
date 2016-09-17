@@ -36,4 +36,4 @@ var url = "http://someurl/answer";
 ```
 Response should be an application/json with {"reply" : "Reply text"}
 
-For style changes tweek with style.css and for functionality app.js
+For style changes tweek with style.css and for functionality app.js. For usage see sample/index.html. 
