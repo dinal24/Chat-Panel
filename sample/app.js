@@ -17,6 +17,13 @@
 
     vm.username = 'You';
 
+    vm.receiveMessage = function (message) {
+      vm.messages.push({
+        'username': "Bot",
+        'content': message
+      });
+    };
+
     vm.syncPost = function(message){
       var JSONObj = {};
       JSONObj.question = message;
@@ -50,11 +57,6 @@
           'username': username,
           'content': message
         });
-         vm.messages.push({
-           'username': "Bot",
-           'content': vm.echoReversed(message)
-        });
-
       }
     };
 
