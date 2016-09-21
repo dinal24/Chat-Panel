@@ -19,6 +19,7 @@
 				theme: '@',
 				submitFunction: '&',
 				receiveFunction: '&',
+				endPoint: '@',
 				visible: '=',
 				infiniteScroll: '&',
                 expandOnNew: '='
@@ -85,7 +86,7 @@
 		vm.submitFunction = submitFunction;
 
 		window.WebSocket = window.WebSocket || window.MozWebSocket;
-		var connection = new WebSocket('ws://127.0.0.1:5005/');
+		var connection = new WebSocket($scope.endPoint);
 		connection.onmessage = function (message) {
 			receiveFunction(message.data);
 		};
@@ -117,7 +118,6 @@
 		});
 
 		function scrollToBottom() {
-			console.log('stb');
 			$timeout(function() { // use $timeout so it runs after digest so new height will be included
 				$scope.$msgContainer.scrollTop($scope.$msgContainer[0].scrollHeight);
 			}, 200, false);
